@@ -32,7 +32,7 @@ if(!isset($_GET['type'])){
   $result = $conn->query("call pokedex()");
   $table = $result->fetch_all(MYSQLI_ASSOC);
   $template = $twig->load('page1.twig.html');
-  echo $template->render(array("pokedex"=>$table));
+  echo $template->render(array("title"=>"pokedex","pokedex"=>$table));
   $conn->close();
 }
 else {
@@ -40,7 +40,7 @@ else {
   $result = $conn->query("call sort_type('$typename')");
   $table = $result->fetch_all(MYSQLI_ASSOC);
   $template = $twig->load('page1.twig.html');
-  echo $template->render(array("pokemon"=>$table));
+  echo $template->render(array("title"=>"pokedex","pokemon"=>$table));
   $conn->close();
 }
 

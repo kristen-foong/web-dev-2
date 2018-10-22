@@ -10,30 +10,61 @@ body {
   background:url(https://i.pinimg.com/originals/03/42/44/034244f741ad75bd774965c7f9772879.png);
   background-repeat:repeat;
   background-attachment:fixed;
-  .goback {
-    padding:10px 0px;
+  .head {
+    margin:0px 0px 0px 15%;
+    padding:40px 0px;
+    background:rgba(0,0,0,0.8);
     h1 {
-      background:#fff;
       line-height:100%;
-      padding:20px 0px;
+      padding:0px;
       margin:5px 0px;
+      text-transform:uppercase;
+      color:#fff;
+      font-size:60px;
     }
-    a {
-      color:white;
-      margin-left:20px;
+  }
+  #sidebar {
+    width:15%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    position:fixed;
+    left:0px; top:0px;
+    .goback {
+      position:absolute;
+      top:20px; left:20px;
+      a {
+        color:white;
+      }
+    }
+  }
+  #pokecard {
+    margin:30px 0px;
+    display:grid;
+    grid-column-gap:10px;
+    grid-row-gap:10px;
+    justify-content:space-around;
+    align-content:center;
+    grid-template-columns:10% 10% 10% 10% 10% 10% 10%;
+    .favcard {
+      border:1px solid #ccc;
+      border-radius:@radius;
+      width:80px;
+      height:350px;
+      position:relative;
+      overflow:hidden;
     }
   }
   #wrapper {
     position:relative;
-    width:90%;
-    padding:20px 0px;
-    margin:0px auto;
-    display:grid;
-    grid-column-gap:20px;
-    grid-row-gap:20px;
-    justify-content:center;
-    align-content:center;
-    grid-template-columns:25% 25% 25% 25%;
+    margin:0px 5% 0px 20%;
+    .container {
+      display:grid;
+      grid-column-gap:20px;
+      grid-row-gap:20px;
+      justify-content:center;
+      align-content:center;
+      grid-template-columns:25% 25% 25% 25%;
+    }
     .card {
       border:1px solid #ccc;
       border-radius:@radius;
@@ -41,6 +72,7 @@ body {
       position:relative;
       overflow:hidden;
       background:#fff;
+      box-shadow:0px 0px 10px rgba(0,0,0,0.1);
       .num {
         width:90%;
         padding:@padding;
@@ -136,7 +168,7 @@ body {
   #selected {
     position:relative;
     width:50%;
-    margin:20px auto;
+    margin:20px 20% 20px 25%;
     padding:40px;
     border:1px solid #ccc;
     border-radius:@radius;
