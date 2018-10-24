@@ -14,7 +14,7 @@ function clearConnection($mysql){
 }
 
 // for some reason servername and username dont work on langara computers?
-$servername = "localhost:3306";
+$servername = "localhost:4001";
 $username = "root";
 $password = "";
 $db = "pokedex";
@@ -27,20 +27,23 @@ if ($conn->connect_error) {
     die("He's dead, Jim! " . $conn->connect_error);
 }
 
+//start session
+session_start();
+$_SESSION["fav"] = [];
 // generate page
-if(!isset($_GET['type'])){
+if(empty($_SESSION["fav"])){
   $result = $conn->query("call pokedex()");
   $table = $result->fetch_all(MYSQLI_ASSOC);
   $template = $twig->load('page1.twig.html');
-  echo $template->render(array("title"=>"pokedex","pokedex"=>$table));
+  echo $template->render(array("title"=>"pokedex", "pokedex"=>$table, "fav"=>$_SESSION["fav"]));
   $conn->close();
 }
 else {
-  $typename = $_GET['type'];
+  $fav = $_GET[$_SESSION["fav"]];
   $result = $conn->query("call sort_type('$typename')");
   $table = $result->fetch_all(MYSQLI_ASSOC);
   $template = $twig->load('page1.twig.html');
-  echo $template->render(array("title"=>"pokedex","pokemon"=>$table));
+  echo $template->render(array("title"=>"pokedex","pokemon"=>$table, "fav"=>$fav));
   $conn->close();
 }
 

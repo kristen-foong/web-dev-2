@@ -11,6 +11,8 @@
 
 {% for info in pokemon %}
 
+{% set fav = fav|merge([info["name"]]) %}
+
 <h1>#{{info["natid"]}}&nbsp;{{info["name"]}}</h1>
 
 <div class="stats {{info.type|e}}">

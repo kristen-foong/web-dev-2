@@ -44,13 +44,26 @@ body {
     grid-row-gap:10px;
     justify-content:space-around;
     align-content:center;
-    grid-template-columns:25% 25% 25% 25%;
+    grid-template-columns:20% 20% 20% 20% 20%;
     .favcard {
-      border:1px solid #ccc;
-      border-radius:@radius;
       padding:30px;
       position:relative;
       overflow:hidden;
+      background:#fff;
+      h1 {
+        margin:0px;
+        font-size:12px;
+        font-weight:bold;
+        text-align:center;
+      }
+      h3 {
+        font-size:10px;
+        margin:0px;
+        text-align:center;
+        text-transform:uppercase;
+        font-weight:bold;
+        font-size:10px;
+      }
     }
   }
   #wrapper {
@@ -58,15 +71,13 @@ body {
     margin:0px 5% 0px 20%;
     .container {
       display:grid;
-      grid-column-gap:20px;
-      grid-row-gap:20px;
+      grid-column-gap:15px;
+      grid-row-gap:15px;
       justify-content:center;
       align-content:center;
       grid-template-columns:25% 25% 25% 25%;
     }
     .card {
-      border:1px solid #ccc;
-      border-radius:@radius;
       justify-self:stretch;
       position:relative;
       overflow:hidden;

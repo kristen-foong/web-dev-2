@@ -20,7 +20,7 @@ function wrap($tag,$value) { //expect strings for both parameters
 }
 
 // for some reason servername and username dont work on langara computers?
-$servername = "localhost:3306";
+$servername = "localhost:4001";
 $username = "root";
 $password = "";
 $db = "pokedex";
