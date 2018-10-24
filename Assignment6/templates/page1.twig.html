@@ -7,8 +7,6 @@
 
 {% include('header.twig.html') with {'title' : title} %}
 {% include('sidebar.twig.html') %}
-{% set isFav = 'false' %}
-{% set fav = [] %}
 
 <div id="wrapper">
 
@@ -16,8 +14,8 @@
   {% if fav is not empty %}
     {% for pokemon in fav %}
     <div class="favcard">
-      <h1>#{{pokemon.natid}}:&nbsp;<a href="index.php?">{{pokemon["name"]}}</a></h1>
-      <h3>{{pokemon.type}}</h3>
+      <h1>#{{pokemon.natid}}:&nbsp;<a href="index.php?unfav={{pokemon.name | url_encode}}">{{pokemon.name}}</a></h1>
+      <h3 class="{{pokemon.type}}">{{pokemon.type}}</h3>
     </div>
     {% endfor %}
   {% endif %}
@@ -28,11 +26,11 @@
     <div class="card">
       <div class="num">
         #{{pokemon.natid}}
-        <a href="index.php?fav={{pokemon.name | url_encode}}">{{pokemon["name"]}}</a>
+        <a href="index.php?fav={{pokemon.name | url_encode}}">{{pokemon.name}}</a>
       </div>
       <div class="type">
         <div class="{{pokemon.type}}">
-          {{pokemon["type"]}}
+          {{pokemon.type}}
         </div>
       </div>
     </div>
