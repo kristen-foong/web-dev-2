@@ -1,0 +1,8 @@
+{% if fav is not empty %}
+  {% for pokemon in fav %}
+  <div class="favcard">
+    <h1>#{{pokemon.natid}}:&nbsp;<a href="index.php?unfav={{pokemon.name | url_encode}}">{{pokemon.name}}</a></h1>
+    <h3 class="{{pokemon.type}}">{{pokemon.type}}</h3>
+  </div>
+  {% endfor %}
+{% endif %}

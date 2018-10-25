@@ -1,0 +1,15 @@
+<div class="container">
+  {% for pokemon in pokedex %}
+    <div class="card">
+      <div class="num">
+        #{{pokemon.natid}}
+        <a href="index.php?fav={{pokemon.name | url_encode}}">{{pokemon.name}}</a>
+      </div>
+      <div class="type">
+        <div class="{{pokemon.type}}">
+          {{pokemon.type}}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
