@@ -151,24 +151,15 @@ function selected(index) {
 // add to squad
 function add(index) {
   if(SQUAD_COUNT < SQUAD_MAX){
-    document.getElementById("squad").innerHTML += "<div class='member'>" + CARR[index].name + "</div>";
-    //remove squad member if clicked
-    for(let i = 0; i < SQUAD_COUNT; i++){
-      document.getElementsByClassName("member")[i].addEventListener("click", function(){remove(i)});
-    }
+    document.getElementById("squad").innerHTML += "<div class='member' onclick='remove("+ index + ")'>" + CARR[index].name + "</div>";
     SQUAD_COUNT++;
   }
 }
 
 //remove from squad
 function remove(index){
-  var elem = document.getElementsByClassName("member")[index];
-  console.log(  document.getElementsByClassName("member"));
-  console.log(index);
-  elem.remove();
-  if(SQUAD_COUNT > 0){
-    SQUAD_COUNT--;
-  }
+   event.currentTarget.remove();
+   SQUAD_COUNT--;
 }
 
 //fill battalion list
@@ -181,3 +172,6 @@ for(let elem of CARR){
 for(let i = 0; i < CARR.length; i++){
   document.getElementsByClassName("unit")[i].addEventListener("click", function(){ selected(i)});
 }
+
+//on hover
+// display char info
