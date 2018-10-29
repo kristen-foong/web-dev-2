@@ -3,4 +3,11 @@
   <div class="goback">
     <a href="javascript:history.back()">Go Back</a>
   </div>
+  <div class="favlist">
+    {% if fav is not empty %}
+      {% for pokemon in fav %}
+      <a href="index.php?unfav={{pokemon.name | url_encode}}">{{pokemon.name}}</a><br>
+      {% endfor %}
+    {% endif %}
+  </div>
 </div>

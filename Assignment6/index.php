@@ -14,7 +14,7 @@ function clearConnection($mysql){
 }
 
 // for some reason servername and username dont work on langara computers?
-$servername = "localhost:4001";
+$servername = "localhost:3306";
 $username = "root";
 $password = "";
 $db = "pokedex";
