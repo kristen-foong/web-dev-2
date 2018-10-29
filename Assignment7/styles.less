@@ -1,0 +1,68 @@
+body {
+
+  font-family:Arial;
+  line-height:100%;
+
+  h1 {
+    text-align:center;
+    text-transform:uppercase;
+    padding:30px 0px;
+  }
+
+  #container {
+    margin:10px auto;
+    display:grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-areas:
+    "battalion" "squad" "profile";
+    grid-column-gap: 10px;
+    justify-items:center;
+    justify-content:center;
+
+    #battalion {
+      grid-area: "battalion";
+      justify-self:stretch;
+      align-self:start;
+      padding:30px;
+      h3 {
+        text-align:right;
+        padding:10px;
+      }
+      .unit {
+        padding:10px;
+        text-align:right;
+        font-size:12px;
+        text-transform:uppercase;
+        line-height:100%;
+      }
+      .selected {
+        background:#eee;
+      }
+    }
+
+    #squad {
+      grid-area: "squad";
+      justify-self:stretch;
+      align-self:start;
+      padding:30px;
+      h3{
+        padding:10px;
+      }
+      .member {
+        padding:10px;
+        font-size:12px;
+        text-transform:uppercase;
+        line-height:100%;
+      }
+    }
+
+    #profile {
+      grid-area: "profile";
+      justify-self:stretch;
+      align-self:start;
+      padding:30px;
+    }
+
+  }
+
+}
