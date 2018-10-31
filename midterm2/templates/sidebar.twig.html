@@ -1,0 +1,8 @@
+<div id="sidebar">
+  {% if fav is not empty %}
+    {% for link in fav %}
+      <a href="index.php?unfav={{row.Day|url_encode}}">{{row.Month}}/{{row.Day}}/{{row.Year}}</a>
+    {% endfor %}
+  {% endif %}
+
+</div>
