@@ -17,10 +17,11 @@ let claude = new Char(
   "Claude Wallace",
   "Edinburgh Army",
   "Ranger Corps, Squad E",
+  "First Lieutenant",
   "Tank Commander",
   "Scout",
   "Born in the Gallian city of Hafen, this promising young squad leader is keenly attuned to climate changes and weather fluctuations. Ever since graduating as valedictorian from the Royal Military Academy, his talent and determination have been an inspiration to his subordinates.",
-  "http://valkyria.sega.com/img/character/chara01.png"
+  "http://valkyria.sega.com/img/character/img01.png"
 );
 
 let riley = new Char(
@@ -31,7 +32,7 @@ let riley = new Char(
   "Artillery Advisor",
   "Grenadier",
   "Born in the Gallian city of Hafen, this brilliant inventor was assigned to Squad E after researching ragnite technology in the United States of Vinland. She appears to share some history with Claude, although the memories seem to be traumatic ones.",
-  "http://valkyria.sega.com/img/character/chara02.png"
+  "http://valkyria.sega.com/img/character/img02.png"
 );
 
 let raz = new Char(
@@ -42,7 +43,7 @@ let raz = new Char(
   "Fireteam Leader",
   "Shocktrooper",
   "Born in the Gallian city of Hafen, this foul-mouthed Darcsen worked his way up from the slums to become a capable soldier. Though foul-mouthed and reckless, his athleticism and combat prowess is top-notch... And according to him, he's invincible.",
-  "http://valkyria.sega.com/img/character/chara03.png"
+  "http://valkyria.sega.com/img/character/img03.png"
 );
 
 let kai = new Char(
@@ -53,7 +54,7 @@ let kai = new Char(
   "Fireteam Leader",
   "Sniper",
   "Born in the Gallian city of Hafen, this cool and collected sharpshooter has earned the codename 'Deadeye Kai.' Along with her childhood friends, she joined a foreign military to take the fight to the Empire. She loves fresh-baked bread, almost to a fault.",
-  "http://valkyria.sega.com/img/character/chara04.png"
+  "http://valkyria.sega.com/img/character/img04.png"
 );
 
 let rags = new Char(
@@ -64,7 +65,7 @@ let rags = new Char(
   "Mascot",
   "Medic",
   "Once a stray, this good good boy is lovingly referred to as 'Rags'. As a K-9 unit, he's a brave and intelligent rescue dog who's always willing to lend a helping paw. When the going gets tough, the tough get ruff.",
-  "http://valkyria.sega.com/img/character/chara13.png"
+  "http://valkyria.sega.com/img/character/img13.png"
 );
 
 let roland = new Char(
@@ -75,7 +76,7 @@ let roland = new Char(
   "Cruiser Commander",
   "Officer",
   "Born in the United Kingdom of Edinburgh, this naval officer commands a state-of-the-art snow cruiser named the Centurion. For a ship's captain, his disposition is surprisingly mild-mannered. As such, he never loses his composure, even in the direst of straits.",
-  "http://valkyria.sega.com/img/character/chara18.png"
+  "http://valkyria.sega.com/img/character/img18.png"
 );
 
 let miles = new Char(
@@ -86,7 +87,7 @@ let miles = new Char(
   "Tank Operator",
   "Driver",
   "Born in the United Kingdom of Edinburgh, this excitable driver was Claude Wallace's partner in tank training, and was delighted to be assigned to Squad E. He's taken up photography as a hobby, and is constantly taking snapshots whenever on standby.",
-  "http://valkyria.sega.com/img/character/chara15.png"
+  "http://valkyria.sega.com/img/character/img15.png"
 );
 
 let minerva = new Char(
@@ -97,7 +98,7 @@ let minerva = new Char(
   "Senior Commander",
   "Scout",
   "Born in the United Kingdom of Edinburgh to a noble family, this competitive perfectionist has authority over the 101st Division's squad leaders. She values honor and chivalry, though a bitter rivalry with Lt. Wallace sometimes compromises her lofty ideals.",
-  "http://valkyria.sega.com/img/character/chara11.png"
+  "http://valkyria.sega.com/img/character/img11.png"
 );
 
 let marie = new Char(
@@ -108,7 +109,7 @@ let marie = new Char(
   "Chief of Operations",
   "Veteran",
   "As the Centurion's crewmember responsible for overseeing daily operations, this gentle and supportive EWI veteran even takes daily tasks like cooking and cleaning upon herself. She never forgets to wear a smile. Her age is undisclosed, even in her personnel files.",
-  "http://valkyria.sega.com/img/character/chara20.png"
+  "http://valkyria.sega.com/img/character/img20.png"
 );
 
 let karen = new Char(
@@ -119,7 +120,7 @@ let karen = new Char(
   "Combat EMT",
   "Medic",
   "Born as the eldest daughter of a large family, this unflappable field medic is an expert at administering first aid in the heat of battle. Although she had plans to attend medical school, she instead enlisted in her nation's military to support her growing household.",
-  "http://valkyria.sega.com/img/character/chara12.png"
+  "http://valkyria.sega.com/img/character/img12.png"
 );
 
 // fill char array
@@ -134,6 +135,7 @@ CARR.push(minerva);
 CARR.push(marie);
 CARR.push(karen);
 
+// squad variables
 var SQUAD_MAX = 5;
 var SQUAD_COUNT = 0;
 
@@ -171,7 +173,29 @@ for(let elem of CARR){
 //add them to squad if clicked
 for(let i = 0; i < CARR.length; i++){
   document.getElementsByClassName("unit")[i].addEventListener("click", function(){ selected(i)});
+  var unit = CARR[i];
+  document.getElementsByClassName("unit")[i].addEventListener("mouseover", hover(unit));
+  document.getElementsByClassName("unit")[i].addEventListener("mouseout", hoverOff());
 }
 
 //on hover
 // display char info
+function hover(unit){
+  return function() {
+    var prof = document.getElementById("profile");
+    prof.innerHTML += "<h1>" + unit.name + "</h1>";
+    prof.innerHTML += "<img src='" + unit.img + "' />";
+    prof.innerHTML += "<br><br><b>Side:</b>&nbsp;" + unit.side;
+    prof.innerHTML += "<br><b>Unit:</b>&nbsp;" + unit.unit;
+    prof.innerHTML += "<br><b>Rank:</b>&nbsp;" + unit.rank;
+    prof.innerHTML += "<br><b>Role:</b>&nbsp;" + unit.role;
+    prof.innerHTML += "<br><b>Class:</b>&nbsp;" + unit.classy;
+    prof.innerHTML += "<p>" + unit.desc + "</p>";
+  }
+}
+
+function hoverOff(){
+  return function() {
+      document.getElementById("profile").innerHTML = "";
+  }
+}
