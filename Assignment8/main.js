@@ -15,11 +15,11 @@ counter = 0;
 
 $("#menu").click(function(){
   var deg = clicked ? 0:30; //menu rotate
-  var top = clicked ? 0:-40; //menu top
+  var top = clicked ? 0:-30; //menu top
   var left = clicked ? 0:-10; //menu left
   var width = clicked ? 0 :100; //link div width
   var margLeft = clicked ? 0:100; //link div left
-  var bulletTop = clicked ? 0: -65; //bullet top
+  var bulletTop = clicked ? 0: -55; //bullet top
   $(this).css({
     "transform":"rotate(-"+ deg +"deg)",
     "top": top+"px",
