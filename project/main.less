@@ -19,6 +19,9 @@
 @transition: all 0.5s ease-in-out;
 @none: 0px;
 
+/* images */
+@image1: url('images/blonde-computer.jpg');
+
 /* body */
 body {
   background:@bg;
@@ -34,7 +37,6 @@ body {
     background:@bg;
   }
 }
-
 
 #head {
   width:100%;
@@ -53,7 +55,7 @@ body {
     top:0px; right:0px;
     width:51%;
     height:100vh;
-    background-image: linear-gradient(to right,@bg, transparent),url('blonde-computer.jpg');
+    background-image: linear-gradient(to right,@bg, transparent),@image1;
     background-position:center center;
     background-size:cover;
     z-index:-1;
