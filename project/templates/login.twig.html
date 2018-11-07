@@ -9,9 +9,24 @@
 
 <div id="login">
   <div id="loginbox">
-    <h1>Login</h1>
-    <input type="text" name="username" placeholder="username">
-    <input type="text" name="password" placeholder="password">
+    <div id="loginin">
+      <div id="log">
+        <h1>Login</h1>
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button>Log In</button>
+        <a onclick="register()" href="#">Not registered? Sign up here.</a>
+      </div>
+      <div id="log2">
+        <h1>Register</h1>
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password1" placeholder="type your password">
+        <input type="text" name="password2" placeholder="type your password again">
+        <button>Sign Up</button>
+        <a onclick="moveback()" href="#">Go Back.</a>
+      </div>
+    </div>
   </div>
 </div>
 

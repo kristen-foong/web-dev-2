@@ -12,6 +12,7 @@
 @white:#fff;
 @lightgrey:#ccc;
 @lshade: rgba(0,0,0,0.1);
+@vwhite:rgba(250,250,250,0.9);
 
 /* font */
 @family: 'Nunito', Arial, sans-serif;
@@ -239,27 +240,67 @@ body {
   align-items:center;
   justify-content:center;
   align-content:center;
+  font-family:@family;
   #loginbox {
-    width:400px;
+    width:450px;
+    height:450px;
     overflow:hidden;
-    h1{
-      font-family:@family;
-      font-weight:300;
-      font-size:50px;
-      width:@full;
-      color:@white;
-      margin:@none;
-      padding:10px 0px;
-    }
-    input {
-      padding:10px 20px;
-      background:@white;
-      border-radius:25px;
-      color:#aaa;
-      margin:5px 0px;
-      width:350px;
-      border:@none;
-      font-family:@family;
+    position:relative;
+    #loginin {
+      width:800px;
+      display:flex;
+      flex-wrap:no-wrap;
+      position:absolute;
+      top:0px; left:0px;
+      transition:all 0.5s ease-in-out;
+      h1{
+        font-family:@family;
+        font-weight:300;
+        font-size:50px;
+        width:@full;
+        color:@white;
+        margin:@none;
+        padding:10px 0px;
+      }
+      input {
+        padding:10px 20px;
+        background:@white;
+        border-radius:25px;
+        color:black;
+        margin:5px 0px;
+        width:350px;
+        border:@none;
+        &::placeholder{
+          color:#aaa;
+        }
+      }
+      a {
+        color:@white;
+        padding:10px 5px;
+      }
+      button {
+        padding:10px;
+        background:@white;
+        border:@none;
+        font-size:15px;
+        font-family:@family;
+        font-weight:700;
+        width:100px;
+        border-radius:25px;
+        text-align:center;
+        margin:5px 0px;
+        color:@lorange;
+      }
+      #log {
+        width:400px;
+        position:relative;
+        padding:25px;
+      }
+      #log2 {
+        width:400px;
+        position:relative;
+        padding:25px;
+      }
     }
   }
 }
@@ -278,7 +319,7 @@ body {
   grid-template-areas: "box empty";
   #installbox {
     margin:150px;
-    background:rgba(250,250,250,0.9);
+    background:@vwhite;
     padding: 60px;
     h1{
       margin:0px;
@@ -309,6 +350,24 @@ body {
   background:@contact;
   background-size:cover;
   background-position:center center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  align-content:center;
+  #contactbox{
+    width:400px;
+    background:@vwhite;
+    padding:50px;
+    font-family:@family;
+    border-radius:10px;
+    h1 {
+      color:black;
+      margin:0px;
+      text-align:left;
+      font-weight:100;
+      font-size:50px;
+    }
+  }
 }
 
 /* footer */
