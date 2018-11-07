@@ -1,0 +1,233 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Nunito:200,300,400');
+
+
+/* colors */
+@bg:#fafafa; // background white
+@dorange:#FF6200; // flrae orange
+@orange:#FF7417; // mid orange
+@lorange:#FF9742; // light orange
+@black:#444;
+@darkgrey:#666;
+@white:#fff;
+
+/* font */
+@family: 'Nunito', Arial, sans-serif;
+
+/* stylings */
+@auto-margin:0px auto;
+@transition: all 0.5s ease-in-out;
+@none: 0px;
+
+/* body */
+body {
+  background:@bg;
+  margin:@none;
+  padding:@none;
+  &::-webkit-scrollbar {
+    width:10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background:@lorange;
+  }
+  &::-webkit-scrollbar-track {
+    background:@bg;
+  }
+}
+
+
+#head {
+  width:100%;
+  height:100vh;
+  position:relative;
+  display:flex;
+  flex-wrap:no-wrap;
+  align-content:center;
+  justify-content:flex-start;
+  align-items:center;
+  padding:@none;
+  margin:@auto-margin;
+  overflow:hidden;
+  #timg {
+    position:absolute;
+    top:0px; right:0px;
+    width:51%;
+    height:100vh;
+    background-image: linear-gradient(to right,@bg, transparent),url('blonde-computer.jpg');
+    background-position:center center;
+    background-size:cover;
+    z-index:-1;
+  }
+  .titlec {
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    #logo {
+      background:@orange; /* flare orange */
+      width:200px;
+      height:200px;
+      border:20px solid rgba(250,250,250,0.4);
+      border-radius:100%;
+      text-align:center;
+      animation-name:pulse;
+      animation-duration:1s;
+      animation-iteration-count:infinite;
+      animation-direction:alternate;
+      margin-right:50px;
+      #logoc {
+        background:@orange;
+        width:160px;
+        height:160px;
+        border-radius:100%;
+        border:20px solid rgba(250,250,250,0.2);
+      }
+    }
+    #title {
+      font-family:@family;
+      font-weight:200;
+      font-size:100px;
+      color:@black;
+      text-align:left;
+      line-height:100%;
+      padding:@none;
+      #subt {
+        font-family:@family;
+        font-size:20px;
+        font-weight:400;
+        letter-spacing:3px;
+        text-transform:Uppercase;
+        color:@darkgrey;
+        line-height:100%;
+        padding:0px 8px;
+      }
+      @keyframes pulse {
+        0% {
+          filter:brightness(100%);
+        }
+        100%{
+          filter:brightness(125%);
+        }
+      }
+    }
+  }
+}
+
+.invisiblock {
+  width:50%;
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  align-content:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.get {
+  padding:15px 10px;
+  border-radius:25px;
+  background:@orange;
+  color:@white;
+  font-family:@family;
+  font-weight:400;
+  letter-spacing:5px;
+  font-size:12px;
+  text-align:center;
+  line-height:100%;
+  text-transform:uppercase;
+  margin-top:20px;
+  transition:@transition;
+  &:hover {
+    background:@lorange;
+  }
+}
+
+/* nav bar */
+#nav {
+  width:100%;
+  height:12px;
+  margin:@auto-margin;
+  padding:15px 0px;
+  display:flex;
+  flex-wrap:no-wrap;
+  align-items:center;
+  justify-content:space-evenly;
+  align-content:center;
+  position:fixed;
+  top:0px; left:0px;
+  z-index:5;
+  background:@bg;
+  a {
+    font-family:@family;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:6px;
+    color:@black;
+    text-decoration:none;
+    font-weight:400;
+    transition:@transition;
+    &:hover {
+      color:@orange;
+    }
+  }
+}
+
+/* info */
+#info {
+  width:100%;
+  height:100vh;
+  position:relative;
+  display:flex;
+  #iimg {
+    position:absolute;
+    top:0px; left:0px;
+    width:50%;
+    height:100vh;
+    background-image: linear-gradient(to left,#fafafa, transparent),url('woman-holding-phone.jpg');
+    background-position:center center;
+    background-size:cover;
+    z-index:-1;
+  }
+  h1 {
+    position:relative;
+    font-family:@family;
+    font-size:30px;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    color:@black;
+    font-weight:300;
+    text-align:center;
+    margin:@none;
+    width:100%;
+  }
+  #infos {
+    font-family:@family;
+    font-size:15px;
+    color:@black;
+    text-align:justify;
+    width:350px;
+    margin:30px auto;
+  }
+}
+
+/* footer */
+footer {
+  background:@bg;
+  padding:30px;
+  text-align:center;
+  font-family:@family;
+  font-size:10px;
+  color:@black;
+  letter-spacing:5px;
+  a {
+    color:@black;
+    text-decoration:none;
+    margin:0px 10px;
+    transition:@transition;
+    &:hover {
+      color:@orange;
+    }
+  }
+}
