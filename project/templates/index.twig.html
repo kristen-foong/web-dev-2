@@ -11,8 +11,7 @@
 <body>
 
 {% include('nav.twig.html') %}
-
-{% include('title.twig.html') %}
+{% include('title.twig.html') with {'title': title}%}
 
 <div id="info">
   <div id="iimg"></div>
@@ -23,7 +22,7 @@
       Get ahead now. You can use Flare for instant messaging, or you can call your buddies or even facetime. Send documents to your colleagues with a simple swipe. Share your photos.
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel temporibus, ea doloremque consequatur repudiandae enim ipsa praesentium blanditiis itaque, velit explicabo rerum consectetur accusamus nisi magni dicta beatae eveniet sed.
       <div class="get">
-        See other features
+        See more features
       </div>
     </div>
   </div>
