@@ -5,13 +5,13 @@ var itemW = 100;
 var counter = 0;
 
 $("#links > div").each(function(){
+var counter = 0;
   $(this).css({
     "width":"0px",
     "left": "-" + itemW*counter
   });
   counter++;
 });
-counter = 0;
 
 $("#menu").click(function(){
   var deg = clicked ? 0:30; //menu rotate
@@ -39,6 +39,27 @@ $("#menu").click(function(){
   clicked = !clicked;
 });
 
-$("#links > div").click(function(){
+$("#item-1").click(function(){
+  $("#bullet").removeClass();
+  $("#bullet").addClass("arc");
+});
 
+$("#item-2").click(function(){
+  $("#bullet").removeClass();
+  $("#bullet").addClass("arc2");
+});
+
+$("#item-3").click(function(){
+  $("#bullet").removeClass();
+  $("#bullet").addClass("arc3");
+});
+
+$("#item-4").click(function(){
+  $("#bullet").removeClass();
+  $("#bullet").addClass("arc4");
+});
+
+$("#item-5").click(function(){
+  $("#bullet").removeClass();
+  $("#bullet").addClass("arc5");
 });

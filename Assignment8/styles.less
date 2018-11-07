@@ -4,6 +4,7 @@
 @center: 0px auto;
 @transition:all 1s ease-in-out;
 @abs: absolute;
+
 body{
   font-family:@font;
   margin:0px;
@@ -57,12 +58,124 @@ body{
   }
 }
 
+.arc {
+  animation-name:arc;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+}
+
 
 @keyframes arc{
   0% {
-    transform: translate(0px,0px) rotate(0deg);
+    transform:translate(0px,0px);
+  }
+  25%{
+    transform:translate(15px, -5px);
+  }
+  50% {
+    transform:translate(25px, -10px);
+  }
+  75%{
+    transform:translate(40px, 10px);
   }
   100% {
-    transform:translate(0px,-10px) rotate(-45deg);
+    transform:translate(50px,50px);
+  }
+}
+
+.arc2 {
+  animation-name:arc2;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes arc2{
+  0% {
+    transform:translate(0px,0px);
+  }
+  25%{
+    transform:translate(65px, -5px);
+  }
+  50% {
+    transform:translate(95px, -10px);
+  }
+  75%{
+    transform:translate(130px, 10px);
+  }
+  100% {
+    transform:translate(150px,50px);
+  }
+}
+
+.arc3 {
+  animation-name:arc3;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+}
+
+@keyframes arc3{
+  0% {
+    transform:translate(0px,0px);
+  }
+  25%{
+    transform:translate(100px, -15px);
+  }
+  50% {
+    transform:translate(150px, -20px);
+  }
+  75%{
+    transform:translate(200px, 5px);
+  }
+  100% {
+    transform:translate(250px,50px);
+  }
+}
+
+.arc4 {
+  animation-name:arc4;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+}
+
+@keyframes arc4{
+  0% {
+    transform:translate(0px,0px);
+  }
+  25%{
+    transform:translate(175px, -15px);
+  }
+  50% {
+    transform:translate(225px, -20px);
+  }
+  75%{
+    transform:translate(275px, 5px);
+  }
+  100% {
+    transform:translate(350px,50px);
+  }
+}
+
+.arc5 {
+  animation-name:arc5;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+}
+
+@keyframes arc5{
+  0% {
+    transform:translate(0px,0px);
+  }
+  25%{
+    transform:translate(200px, -15px);
+  }
+  50% {
+    transform:translate(275px, -20px);
+  }
+  75%{
+    transform:translate(350px, 5px);
+  }
+  100% {
+    transform:translate(450px,50px);
   }
 }
