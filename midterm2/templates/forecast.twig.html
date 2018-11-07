@@ -1,0 +1,7 @@
+<div id="forecast">
+  {% for row in forecast %}
+  <div class="forecastin">
+    <a href="index.php?fav={{row.Day|url_encode}}">{{row.Month}}/{{row.Day}}/{{row.Year}}</a>&nbsp;<b>{{row.Forecast}}</b>
+  </div>
+  {% endfor %}
+</div>

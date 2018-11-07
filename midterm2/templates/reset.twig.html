@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include('head.twig.html') %}
+
+  <body>
+
+      {% include('header.twig.html') with {'title': title, 'subtitle': subtitle} %}
+      {% include('menu.twig.html') with {'links': links} %}
+
+      <div id="resetmsg">
+        <h1>Goodbye!</h1>
+      </div>
+
+  </body>
+</html>

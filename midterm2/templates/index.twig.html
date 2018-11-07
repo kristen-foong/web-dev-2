@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include('head.twig.html') %}
+
+  <body>
+
+      {% include('header.twig.html') with {'title': title, 'subtitle': subtitle} %}
+      {% include('menu.twig.html') with {'links': links} %}
+
+      {% include('sidebar.twig.html') with {'fav':fav} %}
+      {% include('favorites.twig.html') with {'fav': fav} %}
+      {% include('forecast.twig.html') with {'forecast':forecast} %}
+
+  </body>
+</html>
