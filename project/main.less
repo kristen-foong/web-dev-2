@@ -10,6 +10,8 @@
 @black:#444;
 @darkgrey:#666;
 @white:#fff;
+@lightgrey:#ccc;
+@lshade: rgba(0,0,0,0.1);
 
 /* font */
 @family: 'Nunito', Arial, sans-serif;
@@ -19,11 +21,16 @@
 @transition: all 0.5s ease-in-out;
 @none: 0px;
 @c: center;
+@vh: 100vh;
+@full:100%;
 
 /* images */
 @image1: url('images/blonde-computer.jpg');
 @image2:url('images/woman-holding-phone.jpg');
 @pattern:url('images/cubes.png');
+@install: url('images/computer-hand.jpg');
+@about: url('images/demographic.jpg');
+@contact: url('images/contact.jpg');
 
 /* body */
 body {
@@ -34,7 +41,7 @@ body {
     width:10px;
   }
   &::-webkit-scrollbar-thumb {
-    background:@lorange;
+    background:@lshade;
   }
   &::-webkit-scrollbar-track {
     background:@bg;
@@ -57,7 +64,7 @@ body {
     position:absolute;
     top:0px; right:0px;
     width:51%;
-    height:100vh;
+    height:@vh;
     background-image: linear-gradient(to right,@bg, transparent),@image1;
     background-position:@c @c;
     background-size:cover;
@@ -122,7 +129,7 @@ body {
 
 .invisiblock {
   width:50%;
-  height:100vh;
+  height:@vh;
   position:relative;
   display:flex;
   align-items:@c;
@@ -156,7 +163,7 @@ body {
 
 /* nav bar */
 #nav {
-  width:100%;
+  width:@full;
   height:12px;
   margin:@auto-margin;
   padding:15px 0px;
@@ -186,15 +193,15 @@ body {
 
 /* info on main page */
 #info {
-  width:100%;
-  height:100vh;
+  width:@full;
+  height:@vh;
   position:relative;
   display:flex;
   #iimg {
     position:absolute;
     top:0px; left:0px;
     width:50%;
-    height:100vh;
+    height:@vh;
     background-image: linear-gradient(to left,#fafafa, transparent),@image2;
     background-position:@c @c;
     background-size:cover;
@@ -210,7 +217,7 @@ body {
     font-weight:300;
     text-align:@c;
     margin:@none;
-    width:100%;
+    width:@full;
   }
   #infos {
     font-family:@family;
@@ -224,12 +231,10 @@ body {
 
 /*login */
 #login {
-  width:100%;
-  height:100vh;
+  width:@full;
+  height:@vh;
   background-color:@lorange;
   background-image:@pattern;
-  position:absolute;
-  top:0px; left:0px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -241,7 +246,7 @@ body {
       font-family:@family;
       font-weight:300;
       font-size:50px;
-      width:100%;
+      width:@full;
       color:@white;
       margin:@none;
       padding:10px 0px;
@@ -257,6 +262,53 @@ body {
       font-family:@family;
     }
   }
+}
+
+/* install page */
+#install {
+  width:@full;
+  height:@vh;
+  background:@install;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:50% 50%;
+  grid-template-areas: "box empty";
+  #installbox {
+    margin:150px;
+    background:rgba(250,250,250,0.9);
+    padding: 60px;
+    h1{
+      margin:0px;
+      text-align:right;
+      font-family:@family;
+      font-weight:100;
+      font-size:50px;
+      border-bottom:1px solid @lorange;
+    }
+  }
+}
+
+/* about */
+#about {
+  width:@full;
+  height:@vh;
+  background:@about;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+
+/* contact */
+#contact {
+  width:@full;
+  height:@vh;
+  background-attachment:fixed;
+  background:@contact;
+  background-size:cover;
+  background-position:center center;
 }
 
 /* footer */
