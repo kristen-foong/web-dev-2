@@ -14,7 +14,7 @@ function clearConnection($mysql){
 }
 
 // for some reason servername and username dont work on langara computers?
-$servername = "localhost:3306";
+$servername = "localhost:4001"; //3306 @ home, 4001 @ school
 $username = "root";
 $password = "";
 $db = "flare";
@@ -27,8 +27,10 @@ if ($conn->connect_error) {
     die("He's dead, Jim! " . $conn->connect_error);
 }
 
+/*
 $result = $conn->query("call login()");
 $table = $result->fetch_all(MYSQLI_ASSOC);
+*/
 
 $template = $twig->load('index.twig.html');
 echo $template->render(array("title"=>"Flare"));
