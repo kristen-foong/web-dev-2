@@ -30,8 +30,8 @@ if ($conn->connect_error) {
 $result = $conn->query("call login()");
 $table = $result->fetch_all(MYSQLI_ASSOC);
 
-$template = $twig->load('index.twig.html');
-echo $template->render(array("title"=>"Flare"));
+$template = $twig->load('login.twig.html');
+echo $template->render(array("title"=>"flare"));
 $conn->close();
 
 

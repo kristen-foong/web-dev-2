@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include('head2.twig.html') %}
+{% include('head.twig.html') %}
 
 <body>
 
 {% include('nav.twig.html') %}
-{% include('title.twig.html') with {'title': title} %}
 
 <div id="login">
-
+  <div id="loginbox">
+    <h1>Login</h1>
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="password" placeholder="password">
+  </div>
 </div>
 
 </body>
-<footer>
-  <a href="">FAQ</a> |
-  <a href="">LEGAL CLAIMS</a> |
-  <a href="">FLARE FOR BUSINESS</a> |
-  <a href="">CREATOR'S BLOG</a>
-</footer>
+{% include('footer.twig.html')%}
 </html>
