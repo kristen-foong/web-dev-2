@@ -2,7 +2,7 @@
 
 include 'main.php';
 
-$template = $twig->load('index.twig.html');
+$template = $twig->load('install.twig.html');
 echo $template->render(array("title"=>"Flare"));
 $conn->close();
 
