@@ -30,6 +30,11 @@ if ($conn->connect_error) {
 $result = $conn->query("call getLatest()");
 $table = $result->fetch_all(MYSQLI_ASSOC);
 
+$messageArr = []; //array that contains messages
+foreach($table as $row){
+  array_push($messageArr,$row);
+}
+
 $template = $twig->load('index.twig.html');
 
 echo $template->render(array("messages"=>$table));

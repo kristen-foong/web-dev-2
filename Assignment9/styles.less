@@ -4,6 +4,7 @@
 @fs: 12px;
 @cb: #0099ff;
 @cr: 25px 25px 0px 25px;
+@border:2px solid #ddd;
 
 body {
   background: @bg;
@@ -25,7 +26,7 @@ body {
         overflow:auto;
         margin:0px auto;
         background:#fff;
-        border:2px solid #ddd;
+        border:@border;
         padding:30px;
         border-radius:@br;
         text-align:right;
@@ -52,15 +53,37 @@ body {
           }
         }
       }
-      input {
+      #user {
         width:370px;
+        padding:10px 20px;
+        line-height:100%;
+        border-radius:@br;
+        border:@border;
+        background:#fff;
         margin:0 auto;
         margin-top:10px;
+      }
+      #text {
+        width:370px;
+        margin:0 auto;
+        margin-top:5px;
         background:#fff;
-        border:2px solid #ddd;
+        border:@border;
         padding:20px;
         border-radius:@br;
         line-height:100%;
+      }
+      #submit {
+        background:@cb;
+        padding:10px 20px;
+        width:400px;
+        text-align:center;
+        color:white;
+        box-shadow:none;
+        border:none;
+        margin:0px auto;
+        margin-top:10px;
+        border-radius:25px;
       }
   }
 
