@@ -1,24 +1,25 @@
 let currUser;
 
 function createChatBubble(row){
-  let msg = "";
-  msg = "<div class='chat' user='" + row.username + "' idx='" + row.idx + "'><span><b>" + row.username + "</b>&nbsp;" + row.time + "</span><p>" + row.message + "</p></div>";
+  let msg = "<div class='chat' user='" + row.username + "' idx='" + row.idx + "'><span><b>" +
+            row.username + "</b>&nbsp;" + row.time + "</span><p>" + row.message + "</p></div>";
   console.log(msg);
   return msg;
 }
 
 let messageIdx = [];
 
-$(document).ready(function(){
+$(document).ready(function(event){
   $.ajax({
-    url:"getmessages.php",
-    method: "POST",
-    data: {
-      idx: currIndex;
-    },
+    url:"initial.php",
+    method: "GET",
     success: function(msg){
+      let output = "";
       let data = JSON.parse(msg);
-      output += createChatBubble(msg);
+      console.table(data);
+      for(let i = 0; i < data.length; i++){
+        output += createChatBubble(data[i]);
+      }
       $("#messages").html(output);
     }
   });

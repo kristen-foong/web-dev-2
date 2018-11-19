@@ -1,6 +1,6 @@
 <?php
 
-include "index.php";
+include "initial.php";
 
 if(array_key_exists("idx", $_POST)){
   foreach($messageArr as $message){

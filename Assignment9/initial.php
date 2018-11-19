@@ -21,12 +21,14 @@ if ($conn->connect_error) {
     die("He's dead, Jim! " . $conn->connect_error);
 }
 
-$result = $conn->query("call getLatest()");
+$result = $conn->query("call getAll()");
 $table = $result->fetch_all(MYSQLI_ASSOC);
 
 $messageArr = []; //array that contains messages
 foreach($table as $row){
   array_push($messageArr,$row);
 }
+
+echo json_encode($messageArr);
 
 ?>
