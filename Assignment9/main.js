@@ -1,17 +1,25 @@
-$('#submit').click(function(event){
-  let user = $('#user');
-  let msg = $('#text');
-  let date = new Date();
+let currUser;
+
+function createChatBubble(row){
+  let msg = "";
+  msg = "<div class='chat' user='" + row.username + "' idx='" + row.idx + "'><span><b>" + row.username + "</b>&nbsp;" + row.time + "</span><p>" + row.message + "</p></div>";
+  console.log(msg);
+  return msg;
+}
+
+let messageIdx = [];
+
+$(document).ready(function(){
   $.ajax({
     url:"getmessages.php",
     method: "POST",
     data: {
-      username: user,
-      time: date,
-      message: msg
+      idx: currIndex;
     },
-    success: function(){
-
+    success: function(msg){
+      let data = JSON.parse(msg);
+      output += createChatBubble(msg);
+      $("#messages").html(output);
     }
   });
 });
