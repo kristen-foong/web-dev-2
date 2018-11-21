@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include('head.twig.html') %}
+
+<body>
+
+{% include('nav2.twig.html') %}
+
+<div id="logging">
+  <div id="friends">
+    {% for friend in friends %}
+      {{friend}}
+    {% endfor %}
+  </div>
+</div>
+
+</body>
+{% include('footer.twig.html')%}
+</html>

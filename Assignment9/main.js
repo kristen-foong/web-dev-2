@@ -24,3 +24,14 @@ $(document).ready(function(event){
     }
   });
 });
+
+$("#sumbit").click(function(event){
+  //stuff
+  $.ajax({
+    url:"initial.php",
+    method: "POST",
+    success: function(){
+
+    }
+  });
+});

@@ -10,6 +10,7 @@ function register(){
   document.getElementById("log2").style.MozTransition = 'all 0.5s';
 }
 
+/* switch between login panels */
 function moveback() {
   document.getElementById("loginin").style.left = "0px";
   document.getElementById("log").style.opacity = "1";
