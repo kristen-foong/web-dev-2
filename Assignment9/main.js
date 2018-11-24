@@ -9,7 +9,7 @@ function createChatBubble(row){
 
 let messageIdx = [];
 
-$(document).ready(function(event){
+$(document).ready(function(){
   $.ajax({
     url:"initial.php",
     method: "GET",
@@ -25,7 +25,7 @@ $(document).ready(function(event){
   });
 });
 
-$("#sumbit").click(function(event){
+$("#submit").click(function(event){
   //stuff
   $.ajax({
     url:"initial.php",

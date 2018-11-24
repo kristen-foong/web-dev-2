@@ -14,7 +14,7 @@ function clearConnection($mysql){
 }
 
 // localhost 3306 at home, 4001 at school
-$servername = "localhost:4001";
+$servername = "localhost:3306";
 $username = "root";
 $password = "";
 $db = "assn9";
