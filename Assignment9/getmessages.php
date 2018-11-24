@@ -1,25 +1,17 @@
 <?php
 
-include "initial.php";
+include 'head.php';
 
-if(array_key_exists("idx", $_POST)){
-  foreach($messageArr as $message){
-    if(intVal($_POST["idx"]) == $message["idx"]){
-      $tempArr = array(
-        "username" => $message["username"],
-        "time" => $message["time"],
-        "message" => $message["message"]
-      );
-      die();
-    }
-  }
-}
+$u = $_POST["username"];
+$m = $_POST["message"];
 
-echo json_encode(array(
-  "idx" => 0,
-  "username" => "",
-  "time" => "",
-  "message" => "No messages"
-));
+$u = mysqli_real_escape_string($conn, $u);
+$m = mysqli_real_escape_string($conn, $m);
+$newMsg = $conn->query("call insertMsg('$u','$m')");
+
+$result = $conn->query("call getLatest()");
+$table = $result->fetch_all(MYSQLI_ASSOC);
+
+echo json_encode($table);
 
 ?>

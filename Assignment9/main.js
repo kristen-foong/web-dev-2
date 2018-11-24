@@ -15,6 +15,7 @@ $(document).ready(function(){
     method: "GET",
     success: function(msg){
       let output = "";
+      console.log(msg);
       let data = JSON.parse(msg);
       console.table(data);
       for(let i = 0; i < data.length; i++){
@@ -25,13 +26,26 @@ $(document).ready(function(){
   });
 });
 
-$("#submit").click(function(event){
+$("#enter").click(function(event){
+  let usern = $('#user').val();
+  let mess = $('#text').val();
   //stuff
   $.ajax({
-    url:"initial.php",
+    url:"getmessages.php",
     method: "POST",
-    success: function(){
-
+    data: {
+      username: usern,
+      message: mess
+    },
+    success: function(msg){
+      let output = "";
+      console.log(msg);
+      let data = JSON.parse(msg);
+      console.table(data);
+      for(let i = 0; i < data.length; i++){
+        output += createChatBubble(data[i]);
+      }
+      $("#messages").html(output);
     }
   });
 });
