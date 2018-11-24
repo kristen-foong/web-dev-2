@@ -10,7 +10,9 @@
 <div id="logging">
   <div id="friends">
     {% for friend in friends %}
-      {{friend}}
+      <div class="friendchat">
+        {{friend.friendname}}
+      </div>
     {% endfor %}
   </div>
 </div>

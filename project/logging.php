@@ -9,6 +9,8 @@ if(!empty($_POST)){
 
 $result = $conn->query("call login()");
 $table = $result->fetch_all(MYSQLI_ASSOC);
+$conn->close();
+$conn = new mysqli($servername, $username, $password, $db);
 
 $true = false;
 
@@ -19,13 +21,13 @@ foreach($table as $row){
 }
 
 function logSuccess($twig, $conn, $user){
-  /*
+
   print_r($user);
   $user = mysqli_real_escape_string($conn,$user);
   $results = $conn->query("call findFriends('$user')");
   print_r($results);
   $friends = $results->fetch_all(MYSQLI_ASSOC);
-  */
+
   $template = $twig->load('logging.twig.html');
   echo $template->render(array("title"=>"Flare", "friends"=>$friends));
 }
