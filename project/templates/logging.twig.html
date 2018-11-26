@@ -10,12 +10,20 @@
 <div id="logging">
   <div id="friends">
     {% for friend in friends %}
-      <div class="friendchat">
+      <div class="friendchat" id="{{friend.friendname}}">
         {{friend.friendname}}
       </div>
     {% endfor %}
   </div>
+  <div id="chatspace">
+    <!-- messages go here -->
+  </div>
+  <!-- message input box -->
+  <div id="textbox">
+    <input id="messageBox" type="text" placeholder="type in your message here">
+  </div>
 </div>
+
 
 </body>
 {% include('footer.twig.html')%}

@@ -12,6 +12,7 @@
     <div id="loginin">
       <div id="log">
         <h1>Login</h1>
+        <!-- error message goes here -->
         {% if error %}
           {{error}}
         {% endif %}
@@ -24,8 +25,8 @@
       </div>
       <div id="log2">
         <h1>Register</h1>
+        <!-- registration form -->
         <form action="register.php" method="post">
-          <input type="text" name="email" placeholder="email">
           <input type="text" name="username" placeholder="username">
           <input type="password" name="password1" placeholder="type your password">
           <input type="password" name="password2" placeholder="type your password again">

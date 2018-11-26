@@ -16,3 +16,33 @@ function moveback() {
   document.getElementById("log").style.opacity = "1";
   document.getElementById("log2").style.opacity = "0";
 }
+
+/* create chat bubble */
+function createChatBubble(msg){
+  let output = "<div class='bubbleC'><div class='chatBubble'>" + msg + "</div></div>";
+  return output;
+}
+
+/* retrieve messages */
+$('.friendchat').click(function(event){
+  let friend = event.target.id;
+  $(friend).removeClass("selected");
+  $(friend).addClass("selected");
+  $.ajax({
+    url:"getMessages.php",
+    method: "POST",
+    data: {
+      friendname: friend
+    },
+    success: function(msg){
+      let output = "";
+      console.log(msg);
+      let data = JSON.parse(msg);
+      console.table(data);
+      for(let i = 0; i < data.length; i++){
+        output += createChatBubble(data[i].message);
+      }
+      $("#chatspace").html(output);
+    }
+  });
+});

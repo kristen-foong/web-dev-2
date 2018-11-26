@@ -34,6 +34,21 @@
 @about: url('images/demographic.jpg');
 @contact: url('images/contact.jpg');
 
+/* flex & center everything */
+.flex {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  align-content:center;
+}
+.flexEnd {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  align-content:flex-end;
+  justify-content:flex-end;
+}
+
 /* body */
 body {
   background:@bg;
@@ -134,10 +149,7 @@ body {
   width:50%;
   height:@vh;
   position:relative;
-  display:flex;
-  align-items:@c;
-  align-content:@c;
-  justify-content:@c;
+  .flex();
   flex-wrap:wrap;
 }
 
@@ -264,15 +276,12 @@ body {
 
 /*login */
 #login {
+  .flex();
   width:@full;
   height:@vh;
   margin-top:40px;
   background-color:@lorange;
   background-image:@pattern;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  align-content:center;
   font-family:@family;
   #loginbox {
     width:450px;
@@ -383,10 +392,7 @@ body {
   background:@contact;
   background-size:cover;
   background-position:center center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  align-content:center;
+  .flex();
   #contactbox{
     width:400px;
     background:@vwhite;
@@ -417,7 +423,58 @@ body {
     position:absolute;
     top:0px; left:0px;
     .friendchat {
-
+      .flex();
+      flex-wrap:no-wrap;
+      padding:20px 0px;
+      font-family:@family;
+      font-size:15px;
+      text-transform:capitalize;
+      border-bottom:1px solid @lightgrey;
+    }
+    .selected {
+      background:@faintgrey;
+    }
+  }
+  #chatspace {
+    width:80%;
+    height:90%;
+    position:absolute;
+    top:0px; left:20%;
+    .flexEnd();
+    .bubbleC {
+      width:100%;
+      .flexEnd();
+      margin-left:80px;
+      .chatBubble {
+        background:@orange;
+        padding:10px;
+        color:@white;
+        margin:0px 10px;
+        margin-bottom:10px;
+        margin-right:100px;
+        border-radius: 25px 25px 0px 25px;
+        font-family:@family;
+        font-size:15px;
+      }
+    }
+  }
+  #textbox {
+    width:80%;
+    height:10%;
+    background:#333;
+    position:absolute;
+    bottom:0px; left:20%;
+    .flex();
+    input {
+      margin:5px 10px;
+      margin-right:90px;
+      border:1px solid #666;
+      background:#444;
+      color:@white;
+      text-align:left;
+      width:100%;
+      border-radius:25px;
+      padding:10px;
     }
   }
 }
