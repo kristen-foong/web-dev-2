@@ -25,14 +25,14 @@ function createChatBubble(msg){
 
 /* retrieve messages */
 $('.friendchat').click(function(event){
-  let friend = event.target.id;
-  $(friend).removeClass("selected");
+  let friend = event.currentTarget;
+  $('.friendchat').removeClass("selected");
   $(friend).addClass("selected");
   $.ajax({
     url:"getMessages.php",
     method: "POST",
     data: {
-      friendname: friend
+      friendname: friend.id
     },
     success: function(msg){
       let output = "";
@@ -45,4 +45,31 @@ $('.friendchat').click(function(event){
       $("#chatspace").html(output);
     }
   });
+});
+
+/* enter a message into chat */
+$('#messageForm').submit(function(event){
+  event.preventDefault();
+  let msg = $('#messageBox').val();
+  let friend = $('.selected').attr('id');
+  console.log(friend);
+  console.log($('.selected')[0]);
+  $.ajax({
+    url:"addMessage.php",
+    method:"POST",
+    data:{
+      message: msg,
+      friendname: friend
+    },
+    success: function(reply){
+      let output = "";
+      console.log(reply);
+      let data = JSON.parse(reply);
+      console.table(data);
+      for(let i = 0; i < data.length; i++){
+        output += createChatBubble(data[i].message);
+      }
+      $("#chatspace").html(output);
+    }
+  })
 });
