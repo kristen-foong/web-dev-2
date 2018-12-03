@@ -664,8 +664,11 @@ body {
   }
   #icons {
     .flex();
-    margin-right:80px;
     flex-wrap:wrap;
+    margin-right:80px;
+    align-items:center;
+    align-content:center;
+    justify-content:center;
     .subsetting {
       color:black;
       font-size:2vw;
@@ -675,11 +678,31 @@ body {
       a {
         color:@orange;
         text-decoration:none;
+        transition:@transition;
         span {
           font-size:9vw;
         }
+        &:hover {
+          color:#aaa;
+        }
       }
     }
+  }
+}
+
+/* edit username */
+#editUserc {
+  width:50%;
+  .flex();
+  flex-wrap:wrap;
+  input {
+    width:1fr;
+  }
+  #editUser {
+    margin:0px;
+    padding:0px;
+    width:100%;
+    .flex();
   }
 }
 

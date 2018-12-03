@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include('head.twig.html') %}
+
+<body>
+
+{% include('nav2.twig.html') %}
+
+<div id="friendPage">
+  <div id="editUserc">
+    <h1>Edit Username</h1>
+    <p id="checkSuccess">
+      {% if success %}
+        {{success}}
+      {% endif %}
+    </p>
+    <p id="currUser"><b>Current Username:</b> {{user}}</p>
+    <form id="editUser">
+      <input id="newUsername" type="text" name="newUsername" placeholder="enter new username here">
+      <button>Submit</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

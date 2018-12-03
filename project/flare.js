@@ -75,3 +75,19 @@ $('#messageForm').submit(function(event){
     }
   });
 });
+
+// change username
+$("#editUser").submit(function(event){
+  let newUser = $("#newUsername").val();
+  $.ajax({
+    url:"changeUser.php",
+    method:"POST",
+    data:{
+      newUsername: newUser
+    },
+    success: function(newUser){
+      $('#checkSuccess').text("Username has been changed successfully.");
+      $('#currUser').text(newUser);
+    }
+  })
+});
