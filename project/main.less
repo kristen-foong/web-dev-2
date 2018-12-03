@@ -355,24 +355,37 @@ body {
   width:@full;
   height:@vh;
   background:@install;
+  background-attachment:fixed;
   background-size:cover;
   background-position:center center;
-  background-attachment:fixed;
   margin-top:20px;
-  display:grid;
-  grid-template-columns:50% 50%;
-  grid-template-areas: "box empty";
-  #installbox {
-    margin:150px;
+  .flex();
+  #installbox{
+    width:400px;
     background:@vwhite;
-    padding: 60px;
-    h1{
+    padding:50px;
+    font-family:@family;
+    border-radius:10px;
+    h1 {
+      color:black;
       margin:0px;
-      text-align:right;
-      font-family:@family;
+      text-align:center;
       font-weight:100;
       font-size:50px;
-      border-bottom:1px solid @lorange;
+      border-bottom:1px solid @orange;
+    }
+    button {
+      padding:10px;
+      color:@white;
+      border:@none;
+      font-size:15px;
+      font-family:@family;
+      font-weight:700;
+      width:100%;
+      border-radius:25px;
+      text-align:center;
+      margin:5px 0px;
+      background:@lorange;
     }
   }
 }
@@ -385,6 +398,7 @@ body {
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
+
 }
 
 /* contact */
@@ -407,9 +421,10 @@ body {
     h1 {
       color:black;
       margin:0px;
-      text-align:left;
+      text-align:center;
       font-weight:100;
       font-size:50px;
+      border-bottom:1px solid @orange;
     }
     #contactForm{
       margin:0px;
@@ -531,7 +546,6 @@ body {
       text-align:left;
       border-radius:25px;
       padding:10px;
-      height:10px;
     }
     button {
       width:50px;
@@ -552,6 +566,7 @@ body {
   .flex();
   flex-wrap:wrap;
   font-family:@family;
+  background:@pattern;
   h1 {
     font-family:@family;
     width:@full;
@@ -569,14 +584,102 @@ body {
     border:1px solid #ccc;
     border-radius:25px;
     margin-right:10px;
+    font-family:@family;
   }
   button {
     border-radius:25px;
+    font-family:@family;
     color:@white;
     background:@orange;
     text-align:center;
     border:none;
     padding:10px 15px;
+  }
+}
+
+/* help page */
+#helpPage {
+  width:@full;
+  height:@vh;
+  .flex();
+  flex-wrap:wrap;
+  font-family:@family;
+  background:@pattern;
+  background-color:@orange;
+  #help {
+    width:50%;
+    color:#fff;
+    h1 {
+      font-family:@family;
+      width:@full;
+      text-align:center;
+      color:@white;
+    }
+    input {
+      width:1fr;
+      padding:10px 15px;
+      border:1px solid #ccc;
+      border-radius:25px;
+      font-family:@family;
+      &::placeholder {
+        color:#aaa;
+      }
+    }
+    button {
+      border-radius:25px;
+      color:@white;
+      background:@lorange;
+      text-align:center;
+      border:none;
+      padding:10px 15px;
+      margin-top:5px;
+      width:1fr;
+      font-family:@family;
+      font-weight:bold;
+    }
+    #searchQuestion {
+      margin:0px;
+      padding:0px;
+      display:grid;
+    }
+    a {
+      color:@white;
+      transition:@transition;
+      &:hover {
+        color:#aaa;
+      }
+    }
+  }
+}
+
+#settings {
+  width:@full;
+  height:@vh;
+  background:#eee;
+  font-family:@family;
+  h1 {
+    text-align:center;
+    margin:0px;
+    padding:30px 0px;
+  }
+  #icons {
+    .flex();
+    margin-right:80px;
+    flex-wrap:wrap;
+    .subsetting {
+      color:black;
+      font-size:2vw;
+      text-align:center;
+      margin: 2vw 5vw;
+      line-height:40px;
+      a {
+        color:@orange;
+        text-decoration:none;
+        span {
+          font-size:9vw;
+        }
+      }
+    }
   }
 }
 
