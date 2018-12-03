@@ -9,8 +9,13 @@
 
 <div id="friendPage">
   <h1>Add Friends</h1>
-  <input id="friendSearch" type="text" placeholder="enter friend name here">
-  <button>Submit</button>
+  {% if error %}
+    {{error}}
+  {% endif %}
+  <form id="addFriends" action="addFriend.php" method="post">
+    <input id="friendSearch" type="text" name="friend" placeholder="enter friend name here">
+    <button>Submit</button>
+  </form>
 </div>
 
 

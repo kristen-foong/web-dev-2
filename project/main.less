@@ -210,6 +210,7 @@ body {
 
 /* nav bar 2 */
 #nav2 {
+  grid-area:sidebar;
   z-index:10;
   width:80px;
   height:@vh;
@@ -390,11 +391,13 @@ body {
 #contact {
   width:@full;
   height:@vh;
-  background-attachment:fixed;
   background:@contact;
+  background-attachment:fixed;
   background-size:cover;
   background-position:center center;
+  margin-top:20px;
   .flex();
+  padding:50px 0px;
   #contactbox{
     width:400px;
     background:@vwhite;
@@ -408,6 +411,35 @@ body {
       font-weight:100;
       font-size:50px;
     }
+    #contactForm{
+      margin:0px;
+      padding:0px;
+      display:grid;
+      input{
+        padding:10px;
+        border-radius:25px;
+        border:1px solid #ccc;
+        margin:2px;
+        width:1fr;
+        color:black;
+        &::placeholder {
+          color:#aaa;
+        }
+      }
+    }
+    button {
+      padding:10px;
+      color:@white;
+      border:@none;
+      font-size:15px;
+      font-family:@family;
+      font-weight:700;
+      width:1fr;
+      border-radius:25px;
+      text-align:center;
+      margin:5px 0px;
+      background:@lorange;
+    }
   }
 }
 
@@ -419,8 +451,12 @@ body {
   position:absolute;
   top:0px; left:0px;
   overflow:hidden;
+  display:grid;
+  grid-template-columns:20% 1fr 80px;
+  grid-template-areas:"friendbar chat sidebar";
   #friends {
-    width:20%;
+    grid-area:friendbar;
+    width:100%;
     height:@vh;
     background:@white;
     position:absolute;
@@ -439,43 +475,55 @@ body {
       background:@faintgrey;
     }
   }
-  #chatspace {
-    width:80%;
-    height:90%;
-    position:absolute;
-    top:0px; left:20%;
-    overflow-y:auto;
-    .bubbleC {
-      .flexEnd();
-      width:80%;
-      margin-left:80px;
-      padding-right:100px;
-      .chatBubble {
-        background:@orange;
-        padding:10px;
-        color:@white;
-        margin:0px 10px;
-        margin-bottom:10px;
-        border-radius: 25px 25px 0px 25px;
-        font-family:@family;
-        font-size:15px;
+  #chatc {
+    grid-area:chat;
+    width:100%;
+    height:100vh;
+    position:relative;
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:1fr 50px;
+    grid-template-areas:
+      "cspace"
+      "textbox";
+    #chatspace {
+      grid-area:cspace;
+      width:100%;
+      height:1fr;
+      overflow-y:auto;
+      overflow-x:hidden;
+      .bubbleC {
+        .flexEnd();
+        width:98%;
+        padding:5px 1% 5px 1%;
+        .chatBubble {
+          background:@orange;
+          padding:10px;
+          color:@white;
+          margin:0px 10px;
+          border-radius: 25px 25px 0px 25px;
+          font-family:@family;
+          font-size:15px;
+        }
       }
     }
   }
   #textbox {
-    width:80%;
-    height:10%;
+    grid-area:textbox;
+    width:100%;
+    height:100%;
     background:#333;
-    position:absolute;
-    bottom:0px; left:20%;
-    display:grid;
-    grid-template-columns: 20fr 0.5fr 90px;
-    grid-template-areas:"box" "button" "blank";
-    align-items:center;
-    justify-content:center;
-    align-content:center;
+    .flex();
+    flex-wrap:no-wrap;
+    #messageForm {
+      margin:0px;
+      padding:0px;
+      width:100%;
+      .flex();
+      flex-wrap:no-wrap;
+    }
     input {
-      grid-area:"box";
+      flex-grow:1;
       margin:5px 10px;
       border:1px solid #666;
       background:#444;
@@ -483,9 +531,10 @@ body {
       text-align:left;
       border-radius:25px;
       padding:10px;
+      height:10px;
     }
     button {
-      grid-area:"button";
+      width:50px;
       background:transparent;
       border:none;
       span {
@@ -502,10 +551,17 @@ body {
   height:@vh;
   .flex();
   flex-wrap:wrap;
+  font-family:@family;
   h1 {
     font-family:@family;
     width:@full;
     text-align:center;
+  }
+  #addFriends {
+    margin:0px;
+    padding:0px;
+    width:100%;
+    .flex();
   }
   input {
     width:50%;

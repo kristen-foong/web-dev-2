@@ -70,6 +70,8 @@ $('#messageForm').submit(function(event){
         output += createChatBubble(data[i].message);
       }
       $("#chatspace").html(output);
+      let chatheight = $("#chatspace").outerHeight();
+      $("#chatspace").scrollTop(chatheight);
     }
-  })
+  });
 });

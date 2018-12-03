@@ -7,9 +7,21 @@
 
 {% include('nav.twig.html') %}
 
-<div id="contact">
-  <div id="contactbox">
-    <h1>Contact Us</h1>
+<div id="contactc">
+  <div id="contact">
+    <div id="contactbox">
+      <h1>Contact Us</h1>
+      <p>Want to get in touch? Contact us by phone, email, or send us a tweet. You can also send us a message with our contact form provided below.</p>
+      <p><b>Phone:</b> 604-909-1010
+      <br><b>Email:</b> info@flare.ca
+      <br><b>Twitter:</b> @flare</p>
+      <form id="contactForm">
+        <input id="contactName" type="text" placeholder="your name here">
+        <input id="contactEmail" type="text" placeholder="your email here">
+        <input id="contactMsg" type="text" placeholder="your message here">
+        <button>Submit</button>
+      </form>
+    </div>
   </div>
 </div>
 
