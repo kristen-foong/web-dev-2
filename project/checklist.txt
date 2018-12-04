@@ -7,7 +7,7 @@ Contains a logon system, using SQL as a back end
  - see login.php, logging.php, login twig templates
 
 Contains at least 6 pages not related to the logon but controlled by the logon
- - chat.php, friends.php, settings.php, link back to index.php, 
+ - chat.php, friends.php, settings.php, link back to index.php, privacy.php, editUsername.php
 
 Use at least 3 Twig templates for pages
  - yep. See template folder

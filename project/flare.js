@@ -77,6 +77,7 @@ $('#messageForm').submit(function(event){
 });
 
 // change username
+// its a little buggy sorry it works the message just doesn't show
 $("#editUser").submit(function(event){
   let newUser = $("#newUsername").val();
   $.ajax({
@@ -87,7 +88,6 @@ $("#editUser").submit(function(event){
     },
     success: function(newUser){
       $('#checkSuccess').text("Username has been changed successfully.");
-      $('#currUser').text(newUser);
     }
   })
 });

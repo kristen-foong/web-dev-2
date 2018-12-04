@@ -13,6 +13,6 @@ $result = $conn->query("call editUserForLogin('$user','$newName')");
 $result = $conn->query("call editUserForMessages('$user','$newName')");
 
 $template = $twig->load('editUser.twig.html');
-echo $template->render(array("title"=>"Flare", "user"=>$newName, "success"=>"Username has been changed successfully."));
+echo $template->render(array("title"=>"Flare","success"=>"Username has been changed successfully."));
 
  ?>
